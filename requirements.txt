@@ -1,0 +1,9 @@
+# ToySVG runtime dependencies.
+# Deliberately minimal: numpy for numerics, scipy for distance transforms /
+# morphology, scikit-image for contour tracing, Pillow for PNG I/O.
+# No SVG rendering library is required -- the benchmark ships its own pinned
+# rasteriser so that scores cannot drift with a library version bump.
+numpy>=1.24
+scipy>=1.10
+scikit-image>=0.20
+Pillow>=9.5

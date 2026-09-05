@@ -1,0 +1,68 @@
+{
+  "name": "toysvg",
+  "pack_version": "P0",
+  "holdout": {
+    "salt": "withheld",
+    "seed": "withheld",
+    "gt_dir": "withheld",
+    "note": "Item ids are salted hashes of the upstream asset names. The salt, the sampling seed and the hidden ground-truth paths are withheld from this repository so the corpus cannot be reversed and the answers are not public; tools/make_kaggle_bundle.py carries its own copy."
+  },
+  "canvas": 256,
+  "ss": 4,
+  "source": {
+    "family": "phosphor",
+    "version": "2.1.1",
+    "licence": "MIT",
+    "url": "https://registry.npmjs.org/@phosphor-icons/core/-/core-2.1.1.tgz",
+    "weights": [
+      "regular"
+    ]
+  },
+  "filter": {
+    "max_stroke_p95_px": 32.0,
+    "min_ink_area_px": 150.0
+  },
+  "measurement": {
+    "assets_available": 1512,
+    "assets_scanned": 192,
+    "accepted": 192,
+    "acceptance_rate": 1.0,
+    "reject_reasons": {},
+    "pool_want_accepted": 180,
+    "jobs": 8
+  },
+  "perturbation": {
+    "enabled": false,
+    "split_deferred": "OOD-PERTURB",
+    "note": "every item's gt_d is the vendor path verbatim; no geometric transformation is applied"
+  },
+  "degradation": {
+    "blur_sigma": 1.1,
+    "noise_sigma": 6.0,
+    "contrast": 0.78,
+    "margin": 0.06
+  },
+  "budgets": {
+    "B1": 48
+  },
+  "stratum_cuts_commands": [
+    27.66666666666667,
+    41.0
+  ],
+  "counts": {
+    "ID-CLEAN": {
+      "C": 9,
+      "M": 9,
+      "S": 9
+    },
+    "OOD-DISJOINT": {
+      "C": 1,
+      "M": 1
+    },
+    "ID-DEGRADED": {
+      "M": 1,
+      "S": 2
+    }
+  },
+  "n_items": 32
+}

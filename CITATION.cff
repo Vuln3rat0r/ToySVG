@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use ToySVG in academic work, cite the specification and this repository."
+title: "ToySVG: Benchmarking Geometric Perception and Vector Reconstruction Under Parsimony Budgets"
+type: software
+authors:
+  - family-names: Riad
+    given-names: Mohamed
+    email: m.riad@esi-sba.dz
+    affiliation: "Higher School of Computer Science (ESI SBA), Sidi Bel Abbes, Algeria"
+version: "0.1.0"
+date-released: "2026-09-06"
+license: MIT
+repository-code: "https://github.com/Vuln3rat0r/toysvg"
+url: "https://github.com/Vuln3rat0r/toysvg"
+keywords:
+  - benchmark
+  - vision models
+  - vector graphics
+  - SVG
+  - evaluation
+  - determinism
+abstract: >-
+  A deterministic benchmark for figure copying by vision models. A model receives
+  one monochrome raster rendered from a hidden SVG path and returns path data
+  under a command budget; the score is a pure function of the two paths.

@@ -1,0 +1,42 @@
+{
+  "title": "ToySVG: Benchmarking Geometric Perception and Vector Reconstruction Under Parsimony Budgets",
+  "description": "<p><strong>ToySVG</strong> is a deterministic benchmark evaluating Vision-Language Models (VLMs) and Multimodal Large Language Models (MLLMs) on geometric visual perception and raster-to-vector SVG path reconstruction under explicit command budgets.</p><p>Features include exact closed-form geometric scoring (soft IoU, symmetric Chamfer boundary fidelity, Euler topological conservation) with zero judge models in the evaluation loop, leakage-mitigated split architecture, and integration with official Kaggle Benchmarks tasks.</p>",
+  "creators": [
+    {
+      "name": "Riad, Mohamed",
+      "affiliation": "Higher School of Computer Science (ESI SBA), Sidi Bel Abbes, Algeria"
+    }
+  ],
+  "keywords": [
+    "vision-language models",
+    "multimodal llm",
+    "vlm",
+    "benchmark",
+    "evaluation",
+    "svg",
+    "vector graphics",
+    "geometric perception",
+    "raster-to-vector",
+    "computer vision"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Vuln3rat0r/ToySVG",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.kaggle.com/benchmarks/tasks/riadmohamed42/toysvg-redraw-from-png/2",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.kaggle.com/benchmarks/tasks/riadmohamed42/toysvg-structure-questions/2",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}

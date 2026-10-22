@@ -10,15 +10,19 @@ authors:
 version: "0.1.0"
 date-released: "2026-09-06"
 license: MIT
-repository-code: "https://github.com/Vuln3rat0r/toysvg"
-url: "https://github.com/Vuln3rat0r/toysvg"
+repository-code: "https://github.com/Vuln3rat0r/ToySVG"
+url: "https://github.com/Vuln3rat0r/ToySVG"
 keywords:
   - benchmark
-  - vision models
+  - vision-language models
+  - multimodal llm
+  - vlm
   - vector graphics
   - SVG
   - evaluation
   - determinism
+  - geometric perception
+  - computer vision
 abstract: >-
   A deterministic benchmark for figure copying by vision models. A model receives
   one monochrome raster rendered from a hidden SVG path and returns path data

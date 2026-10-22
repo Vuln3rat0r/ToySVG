@@ -1,11 +1,28 @@
 # ToySVG: Benchmarking Geometric Perception and Vector Reconstruction Under Parsimony Budgets
 
+<p align="center">
+  <a href="docs/ToySVG_Benchmark_Specification_v0.1.pdf"><img src="https://img.shields.io/badge/Paper-Preprint%20PDF-red.svg" alt="Preprint Paper"></a>
+  <a href="https://www.kaggle.com/benchmarks/tasks/riadmohamed42/"><img src="https://img.shields.io/badge/Kaggle-Benchmark_Tasks-20BEFF?logo=kaggle&logoColor=white" alt="Kaggle Tasks"></a>
+  <a href="https://github.com/Vuln3rat0r/toysvg/releases/tag/v0.1.0"><img src="https://img.shields.io/badge/Release-v0.1.0-blue.svg" alt="Release v0.1.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/Evaluation-Deterministic%20(No%20LLM%20Judge)-success.svg" alt="Deterministic Evaluation">
+</p>
+
 ![ToySVG Evaluation Sample](docs/figures/toysvg-eval-strip.png)
 
-ToySVG is a deterministic benchmark evaluating geometric perception and vector path reconstruction from raster images under explicit command budgets $k \in \{16, 48, 160, \infty\}$. The model receives a single monochrome input image rendered from a hidden SVG path on a $256 \times 256$ coordinate canvas and synthesizes vector path commands reproducing the target geometry. The scoring pipeline is an exact closed-form function of the predicted and target paths.
+**ToySVG** is a deterministic benchmark evaluating **Vision-Language Models (VLMs)** and **Multimodal LLMs** on geometric visual perception and raster-to-vector SVG path reconstruction under explicit command budgets $k \in \{16, 48, 160, \infty\}$. The model receives a single monochrome input image rendered from a hidden SVG path on a $256 \times 256$ coordinate canvas and synthesizes vector path commands reproducing the target geometry. The scoring pipeline is an exact closed-form function of the predicted and target paths—eliminating stochastic LLM-as-a-judge bias entirely.
 
 Full specification paper (45 pages): **[`docs/ToySVG_Benchmark_Specification_v0.1.pdf`](docs/ToySVG_Benchmark_Specification_v0.1.pdf)**:
 construct, measurement pipeline, proofs, and validation protocol.
+
+### Key Highlights
+
+* 🎯 **Deterministic Closed-Form Evaluation**: Scores are exact mathematical functions of predicted and target geometry (soft IoU $s_R$, symmetric Chamfer distance $s_E$, Euler topological conservation $s_T$). Zero stochastic judge models in the evaluation loop.
+* ⚡ **Explicit Parsimony Budgets**: Command caps $k \in \{16, 48, 160, \infty\}$ and parsimony ratios $\rho(k)$ penalize brute-force pixel tracers and reward genuine geometric abstraction.
+* 🔬 **Perception vs. Code Synthesis Separation**: A companion 160-query diagnostic task isolates pure visual perception from parametric SVG path synthesis, diagnosing the *code synthesis gap*.
+* 🛡️ **Leakage & Memorization Defense**: Blind hashed inputs, pinned upstream asset sources, and three controlled splits (`ID-CLEAN`, `ID-DEGRADED`, `OOD-DISJOINT`) quantify recall vs. perceptual generalization.
+* 🚀 **Kaggle Benchmarks Ready**: Direct execution against frontier models (**GPT-6 Astra**, **Gemini 4 Argon**, **Claude Opus 5.5**, **GPT-5.6 Luna**, **Gemini 3.8 Flash**) via official Kaggle benchmark tasks.
 
 ---
 
@@ -273,7 +290,7 @@ Runs are resumable: results are appended to `results.jsonl` as they complete, an
 re-running the same command skips items already answered. A `--deadline` bounds the
 wall-clock time, so a quota stall costs you time and not data.
 
-## Empirical Benchmark Leaderboard
+## Empirical Benchmark Leaderboard (Frontier VLM Evaluation)
 
 ToySVG evaluates frontier multimodal systems across two complementary tasks on the identical 32-item test pack:
 1. **Parametric Vector Drawing ($k \le 48$)**: Measures closed-form geometric fidelity ($S \in [0, 1]$) under strict command parsimony.
